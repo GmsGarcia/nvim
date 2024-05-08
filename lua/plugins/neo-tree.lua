@@ -9,5 +9,10 @@ return {
 	},
 	config = function()
 		vim.keymap.set("n", "<leader>ee", ":Neotree filesystem toggle left<CR>", {})
+		require("neo-tree").setup({
+			filesystem = {
+				hijack_netrw_behavior = "open_current",
+			},
+		})
 	end,
 }
