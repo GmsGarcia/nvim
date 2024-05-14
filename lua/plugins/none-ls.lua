@@ -8,7 +8,7 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.phpcbf,
         null_ls.builtins.diagnostics.phpcs,
-        //null_ls.builtins.diagnostics.golangcilsp,
+        --null_ls.builtins.diagnostics.golangcilsp,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
