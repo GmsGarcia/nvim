@@ -15,6 +15,11 @@ return {
           visible = true,
           hide_dotfiles = false,
           hide_gitignored = false,
+          never_show_by_pattern = {
+            "*.meta",
+            "*.cs.meta",
+            "*.csproj",
+          },
         },
         hijack_netrw_behavior = "open_current",
       },
