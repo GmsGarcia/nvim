@@ -33,9 +33,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local pid = vim.fn.getpid()
-			local omnisharp_bin = "/usr/local/bin/omnisharp-roslyn/OmniSharp"
-
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local opt = {
