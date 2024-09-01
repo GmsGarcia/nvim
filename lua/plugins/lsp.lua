@@ -1,8 +1,8 @@
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  require("completion").on_attach(client)
-  vim.lsp.inlay_hint.enable(bufnr)
+  --require("completion").on_attach(client) -- this broke after 0.10 neovim update :/
+  --vim.lsp.inlay_hint.enable(bufnr) -- this too
 end
 return {
   {
