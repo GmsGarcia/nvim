@@ -12,7 +12,7 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
-opt.autoindent = false
+opt.autoindent = true
 
 -- line wrapping
 -- opt.wrap = false
@@ -44,18 +44,18 @@ opt.backspace = "indent,eol,start"
 -- allow you to yank from neovim and C-v to anywhere vice versa
 opt.clipboard:prepend({ "unnamed", "unnamedplus" })
 if _G.IS_WSL and vim.fn.executable("/mnt/c/Windows/System32/win32yank.exe") == 1 then -- you need put win32yank in system32
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = { "/mnt/c/Windows/System32/win32yank.exe", "-i", "--crlf" },
-      ["*"] = { "/mnt/c/Windows/System32/win32yank.exe", "-i", "--crlf" },
-    },
-    paste = {
-      ["+"] = { "/mnt/c/Windows/System32/win32yank.exe", "-o", "--lf" },
-      ["*"] = { "/mnt/c/Windows/System32/win32yank.exe", "-o", "--lf" },
-    },
-    cache_enabled = true,
-  }
+	vim.g.clipboard = {
+		name = "win32yank-wsl",
+		copy = {
+			["+"] = { "/mnt/c/Windows/System32/win32yank.exe", "-i", "--crlf" },
+			["*"] = { "/mnt/c/Windows/System32/win32yank.exe", "-i", "--crlf" },
+		},
+		paste = {
+			["+"] = { "/mnt/c/Windows/System32/win32yank.exe", "-o", "--lf" },
+			["*"] = { "/mnt/c/Windows/System32/win32yank.exe", "-o", "--lf" },
+		},
+		cache_enabled = true,
+	}
 end
 
 -- split windows
@@ -74,7 +74,7 @@ opt.undofile = true
 opt.iskeyword:append("-") -- now 'test-test' is a word
 opt.scrolloff = 10
 opt.path:append({ "**" }) -- Finding files - Search down into subfolders
-opt.updatetime = 100      -- ref: https://www.reddit.com/r/vim/comments/jqogan/how_does_a_lower_updatetime_lead_to_better/
-opt.belloff = "all"       -- Just turn the dang bell off
-opt.signcolumn = "yes"    -- always showing the signcolumn
+opt.updatetime = 100 -- ref: https://www.reddit.com/r/vim/comments/jqogan/how_does_a_lower_updatetime_lead_to_better/
+opt.belloff = "all" -- Just turn the dang bell off
+opt.signcolumn = "yes" -- always showing the signcolumn
 opt.guicursor = "a:block"
